@@ -5,4 +5,14 @@
 
 # -*- coding: utf-8 -*-
 
-__version__ = "0.0.1"
+import click
+
+from meshsync.node.workspace.cmd_workspace import workspace
+
+
+@click.group()
+def node():
+    pass
+
+
+node.add_command(workspace)

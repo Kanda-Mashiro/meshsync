@@ -7,34 +7,15 @@
 
 import click
 
+from meshsync.node.workspace.commands.cmd_init import init
+from meshsync.node.workspace.commands.cmd_shadow import shadow
+from meshsync.node.workspace.commands.cmd_deshadow import deshadow
+from meshsync.node.workspace.commands.cmd_list import list
+from meshsync.node.workspace.commands.cmd_status import status
+
 
 @click.group()
 def workspace():
-    pass
-
-
-@click.command()
-def init():
-    pass
-
-
-@click.command()
-def shadow():
-    pass
-
-
-@click.command()
-def deshadow():
-    pass
-
-
-@click.command()
-def list():
-    pass
-
-
-@click.command()
-def status():
     pass
 
 

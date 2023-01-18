@@ -7,12 +7,7 @@
 
 import click
 
-from meshsync.node.workspace.command import workspace
 
-
-@click.group()
-def node():
+@click.command()
+def list():
     pass
-
-
-node.add_command(workspace)

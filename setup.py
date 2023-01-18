@@ -1,5 +1,7 @@
-from setuptools import setup, find_packages
 from os import path
+from setuptools import setup, find_packages
+
+import meshsync
 
 DIR = path.dirname(path.abspath(__file__))
 
@@ -17,12 +19,7 @@ with open(path.join(DIR, "requirements.txt")) as f:
 with open(path.join(DIR, "README.md")) as f:
     README = f.read()
 
-# get __version__ from _version.py
-ver_file = path.join("meshsync", "_version.py")
-with open(ver_file) as f:
-    exec(f.read())
-
-VERSION = __version__
+VERSION = meshsync.__version__
 
 setup(
     name="meshsync",

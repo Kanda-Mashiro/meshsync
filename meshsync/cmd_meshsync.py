@@ -7,8 +7,7 @@
 
 import click
 
-from meshsync.node.command import node
-
+from meshsync.node.cmd_node import node
 
 @click.group()
 def meshsync():
@@ -16,5 +15,3 @@ def meshsync():
 
 
 meshsync.add_command(node)
-
-meshsync()
