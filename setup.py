@@ -5,36 +5,47 @@ import meshsync
 
 DIR = path.dirname(path.abspath(__file__))
 
-DESCRIPTION = "The decentralized file sync solution for seamless and secure data transfer across devices."
+DESCRIPTION = 'The decentralized file sync solution for seamless and secure data transfer across devices.'
 
-AUTHORS = "Kanda-Mashiro"
+AUTHORS = 'Kanda-Mashiro'
 
-EMAIL = ""
+EMAIL = ''
 
-URL = "https://github.com/Kanda-Mashiro/meshsync"
+URL = 'https://github.com/Kanda-Mashiro/meshsync'
 
-with open(path.join(DIR, "requirements.txt")) as f:
+with open(path.join(DIR, 'requirements.txt')) as f:
     INSTALL_PACKAGES = f.read().splitlines()
 
-with open(path.join(DIR, "README.md")) as f:
+with open(path.join(DIR, 'README.md')) as f:
     README = f.read()
 
 VERSION = meshsync.__version__
 
 setup(
-    name="meshsync",
+    name='meshsync',
     version=VERSION,
     description=DESCRIPTION,
     long_description=README,
-    long_description_content_type="text/markdown",
+    long_description_content_type='text/markdown',
     author=AUTHORS,
     author_email=EMAIL,
     url=URL,
-    license="MIT",
+    license='MIT',
     packages=find_packages(),
     install_requires=INSTALL_PACKAGES,
+    tests_require=['pytest', 'pytest-cov', 'pytest-sugar'],
+    entry_points={
+        'console_scripts': [
+            'meshsync = meshsync.cmd_meshsync:meshsync',
+        ]
+    },
+    python_requires='>=3',
+    keywords=[
+        'meshsync',
+        'cli',
+        'decentration',
+        'file-synchronization',
+        'multi-devices',
+    ],
     include_package_data=True,
-    python_requires=">=3",
-    keywords=["meshsync", "decentration", "file-synchronization", "multi-devices"],
-    tests_require=["pytest", "pytest-cov", "pytest-sugar"],
 )

@@ -9,6 +9,7 @@ import click
 
 from meshsync.node.cmd_node import node
 
+
 @click.group()
 def meshsync():
     pass
